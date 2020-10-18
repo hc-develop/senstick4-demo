@@ -1,0 +1,12 @@
+{
+  "short_name": "SenStick4",
+  "name": "SenStick4 DEMO",
+  "icons": [{
+    "src": "icon.png",
+    "type": "image/png",
+    "sizes": "182x182"
+  }],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#fafafa",
+  "theme_color": "#fafafa"
+}

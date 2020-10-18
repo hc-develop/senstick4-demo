@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="no-js" lang="ja">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SenStick4 mRuby/c ソース</title>
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootswatch/cerulean/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+
+</head>
+
+<body class="bbs-admin active vh-100">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">SenStick4 mRuby/c デモ</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://senstick-app.herokuapp.com/">書き込み</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Content -->
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col">
+        <div class="form-group h-100">
+          <label for="editor1">センサー値取得デモ</label>
+          <div id="editor1" class="h-75"></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group h-100">
+          <label for="editor1">LED点灯デモ</label>
+          <div id="editor2" class="h-75">ここがエディタになります</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/ace/src/ace.js"></script>
+  <script src="js/plugins.js"></script>
+  <script>
+    $(function() {
+      var editor1 = ace.edit("editor1");
+      editor1.$blockScrolling = Infinity
+      editor1.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+      });
+      editor1.setTheme("ace/theme/github");
+      editor1.getSession().setMode("ace/mode/ruby");
+      editor1.setFontSize(20)
+      $.get("./demo/demo_sensore.rb", function(data){
+        console.log('load');
+        editor1.setValue(data);
+      });
+      var editor2 = ace.edit("editor2");
+      editor2.$blockScrolling = Infinity
+      editor2.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+      });
+      editor2.setTheme("ace/theme/github");
+      editor2.getSession().setMode("ace/mode/ruby");
+      editor2.setFontSize(20)
+      $.get("./demo/demo_led.rb", function(data){
+        console.log('load');
+        editor2.setValue(data);
+      });
+      
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+﻿/* CSS sprite */
+.cool-bright {
+    background: url(../img/BrightCool.PNG) no-repeat;
+    width: 682px;
+    height: 475px;
+    transition:all 1s ease-in;
+}
+
+.cool-dark {
+    background: url(../img/DarkCool.PNG) no-repeat;
+    width: 682px;
+    height: 475px;
+    transition:all 1s ease-in;
+}
+
+.hot-bright {
+    background: url(../img/BrightHot.PNG) no-repeat;
+    width: 682px;
+    height: 475px;
+    animation: hot .5s steps(6) infinite;
+    transition:all 1s ease-in;
+}
+
+.hot-dark {
+    background: url(../img/DarkHot.PNG) no-repeat;
+    width: 682px;
+    height: 475px;
+    animation: hot .5s steps(6) infinite;
+    transition:all 1s ease-in;
+}
+@media (max-width: 576px) {
+    .cool-bright, .cool-dark, .hot-bright, .hot-dark{
+        zoom: 60%;
+    }
+}
+@media (min-width: 576px) {
+    .cool-bright, .cool-dark, .hot-bright, .hot-dark{
+        zoom: 60%;
+    }
+}
+
+@media (min-width: 768px) {
+    .cool-bright, .cool-dark, .hot-bright, .hot-dark{
+        zoom: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+    .cool-bright, .cool-dark, .hot-bright, .hot-dark{
+        zoom: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .cool-bright, .cool-dark, .hot-bright, .hot-dark{
+        zoom: 120%;
+    }
+}
+  
+/* Both animations are used the same keyframes */
+@keyframes hot {
+    to {
+        background-position: -4096px 0;
+    }
+}

@@ -1,0 +1,114 @@
+<!doctype html>
+<html class="no-js" lang="ja">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SenStick4 mRuby/c デモ</title>
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootswatch/cerulean/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/sensor.css">
+
+  <meta name="theme-color" content="#fafafa">
+
+</head>
+
+<body class="bbs-admin active">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">SenStick4 mRuby/c デモ</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a id="connectBle" class="nav-link">接続</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="edit.html" target="_blank">ソース</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://senstick-app.herokuapp.com/" target="_blank" rel="noopener noreferrer">書き込み</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row ">
+      <div class="col">
+        <div id="homeImage" class="hot-dark" ></div>
+      </div>
+      <div class="col-3 d-flex align-items-start flex-column">
+        <div class="w-100">
+          <table class="table text-center">
+            <tbody>
+              <tr>
+                <th scope="row">デバイス</th>
+                <td id="deviceName">-</td>
+              </tr>
+              <tr>
+                <th scope="row">温度(℃)</th>
+                <td id="tempVal">-</td>
+              </tr>
+              <tr>
+                <th scope="row">湿度(%)</th>
+                <td id="humidityVal">-</td>
+              </tr>
+              <tr>
+                <th scope="row">照度(lx)</th>
+                <td id="luxVal">-</td>
+              </tr>
+              <tr>
+                <th scope="row">UV強度(μW/cm²)</th>
+                <td id="uvVal">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="message" class="w-100 mb-auto">
+        </dic>
+      </div>
+        <div class="w-100">
+          <div class="form-group">
+            <label for="tempRange">温度しきい値：</label>
+            <span id="tempSH">25</span>
+            <input type="range" min="-10" max="50" value="25"
+              class="form-control-range" id="tempRange">
+          </div>
+          <div class="form-group">
+            <label for="lxRange">明るさしきい値：</label>
+            <span id="lxSH">50</span>
+            <input type="range"  min="0" max="2000" value="50"
+                class="form-control-range" id="lxRange">
+          </div>
+          </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="vendor/jquery/jquery.slim.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/bluejelly.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
