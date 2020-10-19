@@ -39,21 +39,27 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
     .cool-bright, .cool-dark, .hot-bright, .hot-dark{
         zoom: 80%;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1090px) {
     .cool-bright, .cool-dark, .hot-bright, .hot-dark{
         zoom: 100%;
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
     .cool-bright, .cool-dark, .hot-bright, .hot-dark{
         zoom: 120%;
+    }
+}
+
+@media (min-width: 1700px) {
+    .cool-bright, .cool-dark, .hot-bright, .hot-dark{
+        zoom: 160%;
     }
 }
   
