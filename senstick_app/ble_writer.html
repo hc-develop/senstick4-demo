@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SenStick BLE writer</title>
+  <script type="text/javascript" src="bluejelly.js"></script>
+  <script type="text/javascript" src="ble_writer.js"></script>
+</head>
+<body onload=page_load()>
+  <div id="device_name">no name</div>
+  <div id="device_status">Disconnected</div>
+  <input type="button" value="scan & connect" onClick="scan_onclick()">
+  <input type="button" value="disconnect" onClick="disconnect_onclick()">
+
+  <hr>
+
+  <input type="button" value="Get Version" onClick="version_onclick()">
+  <span id="version_text"></span>
+  <br>
+
+  <input type="button" value="LED off" onClick="led_off_onclick()">
+  <input type="button" value="LED on" onClick="led_on_onclick()">
+
+  <br>
+  Send Packet(HEX): <input id="packet_hex" type="text" size="40" maxlength="100">
+  <input id="packet_send_button" type="button" value="Send" onClick="packet_send_onclick()">
+
+  <hr>
+
+  <input type="button" value="Battery Level: -- %" onClick="battery_onclick()"  id="battery_button">
+
+  <hr>
+  Variable Name: <input id="variable_name" type="text" size="10" maxlength="15"><br>
+  <input id="variable_read_button" type="button" value="Read ->" onClick="variable_read_onclick()">
+  <input id="variable_value_get" type="text" size="10" maxlength="15" readonly="true"><br>
+  <input id="variable_value_set" type="text" size="10" maxlength="15">
+  <input id="variable_write_button" type="button" value="-> Write" onClick="variable_write_onclick()">
+
+  <hr>
+  <input type="button" value="Get sensor values" onClick="getsensor1_onclick()">
+
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3">SenStick Sensor Values</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>温度</td>
+        <td align="right"><span id="sensor_value_temperature_text"></span></td>
+	<td>℃</td>
+      </tr>
+      <tr>
+        <td>湿度</td>
+        <td align="right"><span id="sensor_value_humidity_text"></span></td>
+	<td>％</td>
+      </tr>
+      <tr>
+        <td>照度</td>
+        <td align="right"><span id="sensor_value_brightness_text"></span></td>
+	<td>lx</td>
+      </tr>
+      <tr>
+        <td>UV強度</td>
+        <td align="right"><span id="sensor_value_uv_text"></span></td>
+	<td></td>
+      </tr>
+      <tr>
+        <td>気圧</td>
+        <td align="right"><span id="sensor_value_airpressure_text"></span></td>
+	<td>hPa</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+  <input type="button" value="Get gyro sensor values" onClick="getsensor2_onclick()">
+
+  <table>
+    <tbody>
+      <thead>
+	<tr>
+	  <th colspan="3">SenStick Gyro Values</th>
+	</tr>
+      </thead>
+
+      <tr>
+        <td>地磁気</td>
+        <td align="right"><span id="sensor_value_magnetic_text"></span></td>
+	<td>μT</td>
+      </tr>
+      <tr>
+        <td>加速度</td>
+        <td align="right"><span id="sensor_value_acc_text"></span></td>
+	<td>g</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <hr>
+  <input id="flash_erease_button" type="button" value="Flash Erase" onClick="flash_erase_onclick()"><br>
+  バイトコード: <span id="mrb_files_text">no name</span>(<span id="transfer_progress">0 %</span>)<br>
+  <input id="transfer_button" type="button" value="Transfer" onClick="transfer_onclick()">
+  
+  <div id="drop_area" style="background-color:#afcfff;border:solid 1px #3470ff; width:450px; height:150px;">Drop your bytecode(s) here.<br>Bytecode is 'filename.mrb'.</div>
+
+</body>
+
+

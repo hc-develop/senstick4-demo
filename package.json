@@ -1,11 +1,11 @@
 {
     "title": "SenStick4Demo",
-    "name": "SenStick4-mRubycDemo",
+    "name": "SenStick4-mrubycDemo",
     "version": "1.0.0",
     "scripts": {
         "start": "node_modules/.bin/gulp watch"
     },
-    "description": "SenStick4 mRuby/c デモ",
+    "description": "SenStick4 mruby/c デモ",
     "keywords": [
         "html",
         "mruby",

@@ -1,15 +1,15 @@
-# SenStick4 mRuby/c デモ
+# SenStick4 mruby/c デモ
 ---
 ## 概要
-mRuby/cを搭載したセンサーデバイス(SenStick4)を利用したデモアプリです。  
-### SenStick4 側でmRubyアプリを実行
+mruby/cを搭載したセンサーデバイス(SenStick4)を利用したデモアプリです。  
+### SenStick4 側でmrubyアプリを実行
 - センサー(温度・湿度・照度・UV)値を取得  
 - しきい値判定しLED点灯
 ### ブラウザでBLE通信
-- mRubyで取得したセンサー値を取得  
-- ブラウザで設定したしきい値をmRubyに設定  
+- mrubyで取得したセンサー値を取得  
+- ブラウザで設定したしきい値をmrubyに設定  
 
-## デモmRubyソース書き込み
+## デモmrubyソース書き込み
 - 書き込みページ遷移  
 - scan & connect 押下し SenStickを選択しConnected になることを確認  
 - SCANで表示されないときはSenStickのリセットスイッチを押下する  
